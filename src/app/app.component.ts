@@ -24,7 +24,7 @@ export class AppComponent implements AfterViewInit {
   pageIndex = 0;
   pageSize = 1;
 
-  displayedColumns: string[] = ['id', 'name', 'address', 'debt'];
+  displayedColumns: string[] = ['name', 'address', 'debt'];
   dataSource = new MatTableDataSource<Client>(CLIENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
