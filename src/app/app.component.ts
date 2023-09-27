@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { ClientsService } from './clients.service';
 
 export interface Client {
   id: number;
@@ -9,27 +10,27 @@ export interface Client {
   debt: number;
 }
 
-const CLIENT_DATA: Client[] = [
-  {id: 1, name: 'Van Darkholme', address: 'Dungeon', debt: 300},
-  {id: 2, name: 'Steve Rambo', address: 'Catalina', debt: 69},
-];
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [ClientsService]
 })
 export class AppComponent implements AfterViewInit {
   pageIndex = 0;
-  pageSize = 1;
+  pageSize = 10;
 
   displayedColumns: string[] = ['name', 'address', 'debt'];
-  dataSource = new MatTableDataSource<Client>(CLIENT_DATA);
+  dataSource!: MatTableDataSource<Client>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  constructor(private clientService: ClientsService) {}
+
   ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
+    this.clientService.all().subscribe((data) => {
+      this.dataSource = new MatTableDataSource<Client>(data);
+      this.dataSource.paginator = this.paginator;
+    });
   }
 }
