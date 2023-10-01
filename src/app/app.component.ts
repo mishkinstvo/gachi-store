@@ -13,24 +13,6 @@ export interface Client {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [ClientsService]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
-  pageIndex = 0;
-  pageSize = 10;
-
-  displayedColumns: string[] = ['name', 'address', 'debt'];
-  dataSource!: MatTableDataSource<Client>;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  constructor(private clientService: ClientsService) {}
-
-  ngAfterViewInit(): void {
-    this.clientService.all().subscribe((data) => {
-      this.dataSource = new MatTableDataSource<Client>(data);
-      this.dataSource.paginator = this.paginator;
-    });
-  }
-}
+export class AppComponent {}

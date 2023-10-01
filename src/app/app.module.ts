@@ -10,11 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RotateBulochkaComponent } from './rotate-bulochka/rotate-bulochka.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { ClientsComponent } from './clients/clients.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RotateBulochkaComponent
+    RotateBulochkaComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatPaginatorModule,
     HttpClientModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
