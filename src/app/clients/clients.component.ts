@@ -26,8 +26,5 @@ export class ClientsComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource<Client>(data);
       this.dataSource.paginator = this.paginator;
     });
-    this.clientService.find(1).subscribe((data) => {
-      console.log(data);
-    })
   }
 }
