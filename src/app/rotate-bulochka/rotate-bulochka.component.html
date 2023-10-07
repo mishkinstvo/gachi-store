@@ -1,3 +1,13 @@
-<button mat-raised-button color="primary" (click)="rotate()">Rotate bulochka</button>
-<hr>
-<img src="assets/bulka.jpg" alt="Bulka" [ngStyle]="{'transform': 'rotate(' + bulkaDegree + 'deg)'}" style="border-radius: 1000px;" />
+<mat-toolbar style="gap: 1em">
+  <button mat-mini-fab color="primary" (click)="rotate()">
+    <mat-icon>refresh</mat-icon>
+  </button>
+  <mat-slider min="0" max="359" step="1">
+    <input matSliderThumb [(ngModel)]="bulkaDegree">
+  </mat-slider>
+  <span>{{ bulkaDegree }}&deg;</span>
+</mat-toolbar>
+
+<img src="assets/bulka.jpg" alt="Bulka"
+     [ngStyle]="{'transform': 'rotate(' + bulkaDegree + 'deg)'}"
+     style="border-radius: 2000px; padding: 1rem; text-align: center" />

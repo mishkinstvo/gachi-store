@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { RotateBulochkaComponent } from './rotate-bulochka/rotate-bulochka.component';
 import { AppComponent } from './app.component';
 import { ClientsComponent } from './clients/clients.component';
+import { ClientComponent } from './client/client.component';
 
 const routes: Routes = [
-  {path: '', component: ClientsComponent},
-  {path: 'bulka', component: RotateBulochkaComponent}
+  {path: '', redirectTo: 'app/records', pathMatch: 'full'},
+  {path: 'app/records', component: ClientsComponent},
+  {path: 'app/records/:id', component: ClientComponent},
+  {path: 'bulka', component: RotateBulochkaComponent},
 ];
 
 @NgModule({

@@ -14,7 +14,7 @@ export class ClientsComponent implements AfterViewInit {
   pageIndex = 0;
   pageSize = 10;
 
-  displayedColumns: string[] = ['name', 'address', 'debt'];
+  displayedColumns: string[] = ['name', 'address', 'debt', 'details'];
   dataSource!: MatTableDataSource<Client>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,5 +26,8 @@ export class ClientsComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource<Client>(data);
       this.dataSource.paginator = this.paginator;
     });
+    this.clientService.find(1).subscribe((data) => {
+      console.log(data);
+    })
   }
 }

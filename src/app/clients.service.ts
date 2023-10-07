@@ -15,6 +15,10 @@ export class ClientsService {
   constructor(private httpClient: HttpClient) {}
 
   all():Observable<Client[]> {
-    return this.httpClient.get<Client[]>('/assets/clients.json',  { observe: 'body' });
+    return this.httpClient.get<Client[]>('http://localhost:8080/clients');
+  }
+
+  find(id: number):Observable<Client> {
+    return this.httpClient.get<Client>(`http://localhost:8080/clients/${id}`);
   }
 }

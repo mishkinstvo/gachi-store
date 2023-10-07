@@ -12,12 +12,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ClientsComponent } from './clients/clients.component';
 import { MatCardModule } from '@angular/material/card';
+import { ClientComponent } from './client/client.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     RotateBulochkaComponent,
-    ClientsComponent
+    ClientsComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,10 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatSliderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

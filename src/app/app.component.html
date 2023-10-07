@@ -1,5 +1,15 @@
-<a mat-raised-button color="primary" routerLink="/">Table</a>
-<a mat-raised-button color="accent" routerLink="bulka">Bulka</a>
+<mat-toolbar color="primary">
+  <a routerLink="/" class="logo">GachiStore</a>
+  <span class="spacer"></span>
+  <a mat-button routerLink="app/records">
+    <span>Table</span>
+    <mat-icon>storage</mat-icon>
+  </a>
+  <a mat-button routerLink="bulka">
+    <span>Bulochka rotator</span>
+    <mat-icon>sync</mat-icon>
+  </a>
+</mat-toolbar>
 
 <mat-card>
   <router-outlet></router-outlet>

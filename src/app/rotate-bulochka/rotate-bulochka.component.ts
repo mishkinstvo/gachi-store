@@ -10,9 +10,11 @@ export class RotateBulochkaComponent {
   bulkaDegree: number = 0;
 
   rotate(): void {
-    if (this.bulkaDegree >= 360) {
+    if (this.bulkaDegree >= 270) {
       this.bulkaDegree = 0;
     }
-    this.bulkaDegree += 90;
+    else {
+      this.bulkaDegree += 90;
+    }
   }
 }
