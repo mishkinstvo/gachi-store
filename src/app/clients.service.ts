@@ -15,10 +15,10 @@ export class ClientsService {
   constructor(private httpClient: HttpClient) {}
 
   all():Observable<Client[]> {
-    return this.httpClient.get<Client[]>('http://localhost:8080/clients');
+    return this.httpClient.get<Client[]>('http://localhost:3030/clients');
   }
 
   find(id: number):Observable<Client> {
-    return this.httpClient.get<Client>(`http://localhost:8080/clients/${id}`);
+    return this.httpClient.get<Client>(`http://localhost:3030/clients/${id}`);
   }
 }
