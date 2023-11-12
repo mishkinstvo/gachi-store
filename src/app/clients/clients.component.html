@@ -21,7 +21,7 @@
   <!-- Debt Column -->
   <ng-container matColumnDef="debt">
     <th mat-header-cell *matHeaderCellDef>Debt</th>
-    <td mat-cell *matCellDef="let element">{{element.debt}} bucks</td>
+    <td mat-cell *matCellDef="let element">{{ element.debt | bucks }}</td>
   </ng-container>
 
   <ng-container matColumnDef="details">

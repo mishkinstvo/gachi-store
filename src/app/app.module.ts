@@ -16,13 +16,15 @@ import { ClientComponent } from './client/client.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
+import { BucksPipe } from './bucks.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     RotateBulochkaComponent,
     ClientsComponent,
-    ClientComponent
+    ClientComponent,
+    BucksPipe
   ],
   imports: [
     BrowserModule,
